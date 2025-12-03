@@ -1,0 +1,214 @@
+
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Catálogo - Ana Karla Hair Stylist (Luxo)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#fbfdf9;
+      --green:#6aa66a;
+      --muted:#556b55;
+      --card:#ffffff;
+      --leaf:#e8f4e8;
+      --gold:#c9a33a;
+      --dark:#0b0b0b;
+      --light-acc: rgba(255,255,255,0.9);
+      font-family: "Montserrat", Arial, sans-serif;
+    }
+    /* common layout */
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--muted);-webkit-font-smoothing:antialiased}
+    header{padding:28px 20px;text-align:center;border-bottom:1px solid rgba(85,107,85,.06)}
+    h1{margin:0;color:var(--green);letter-spacing:1px;font-family:"Playfair Display",serif;font-size:26px}
+    p.lead{margin:6px 0 0;color:var(--muted);font-weight:600}
+    .container{max-width:1050px;margin:22px auto;padding:18px}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(85,107,85,.06);border:1px solid rgba(85,107,85,.04)}
+    .section-title{color:var(--green);margin-bottom:8px;font-weight:800;font-size:15px;font-family:"Playfair Display",serif}
+    table{width:100%;border-collapse:collapse;color:#345; margin-top:6px}
+    th,td{padding:8px 6px;border-top:1px solid rgba(85,107,85,.04);text-align:left}
+    th{color:var(--green);font-weight:700}
+    .small{font-size:13px;color:#556b55}
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+    /* circular section bubbles like WhatsApp */
+    .bubbles{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:16px 0}
+    .bubble{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:78px;height:78px;border-radius:50%;
+      background:linear-gradient(180deg,var(--leaf),#fff);
+      border:1px solid rgba(106,166,106,.12);
+      box-shadow:0 6px 18px rgba(86,120,86,.06);
+      text-align:center;flex-direction:column;text-decoration:none;color:var(--green);font-weight:700;
+      font-size:13px;padding:8px;
+    }
+    .bubble .icon{font-size:22px;margin-bottom:4px;display:block}
+    .bubble span{font-size:12px;display:block}
+    /* more drawn contact card (cartão desenhado) */
+    .contact-card{padding:18px;border-radius:14px;background:linear-gradient(135deg,#fff,#f7fff7);border:1px solid rgba(106,166,106,.08);box-shadow:0 12px 30px rgba(86,120,86,.06);position:relative;overflow:hidden}
+    .contact-deco{position:absolute;left:-30px;top:-30px;opacity:.08;font-size:160px;transform:rotate(-22deg)}
+    .contact-card h3{margin:0;font-family:"Playfair Display",serif;color:var(--green);font-size:20px}
+    .contact-line{display:flex;align-items:center;gap:10px;margin-top:10px}
+    .contact-line a{color:var(--green);text-decoration:none;font-weight:700}
+    .cta{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .btn{background:var(--green);color:white;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700;box-shadow:0 6px 12px rgba(106,166,106,.12)}
+    /* luxury theme */
+    .luxury .leaf-deco{display:none}
+    .luxury body{background:linear-gradient(180deg,#070707,#030303);color:var(--light-acc)}
+    .luxury header{border-bottom:1px solid rgba(255,255,255,.04)}
+    .luxury h1{color:var(--gold);font-family:"Playfair Display",serif}
+    .luxury p.lead{color:rgba(255,255,255,.75)}
+    .luxury .card{background:linear-gradient(180deg,#0f0f0f,#070707);border:1px solid rgba(255,255,255,.03);box-shadow:0 12px 40px rgba(0,0,0,.6)}
+    .luxury .section-title{color:var(--gold)}
+    .luxury table th{color:var(--gold)}
+    .luxury .bubble{background:linear-gradient(180deg,rgba(201,163,58,.06),rgba(255,255,255,.02));border:1px solid rgba(201,163,58,.12);color:var(--light-acc);box-shadow:0 12px 30px rgba(0,0,0,.6)}
+    .luxury .contact-card{background:linear-gradient(135deg,#0f0f0f,#070707);border:1px solid rgba(201,163,58,.06);box-shadow:0 18px 50px rgba(0,0,0,.7)}
+    .luxury .contact-card h3{color:var(--gold)}
+    .luxury .btn{background:var(--gold);color:#0b0b0b}
+    /* responsive */
+    @media(max-width:900px){.grid{grid-template-columns:1fr} .bubbles{gap:8px} .bubble{width:64px;height:64px;font-size:12px}}
+  </style>
+</head>
+<body>
+  <div class="leaf-deco">🌿</div>
+  <header>
+    <h1>Ana Karla Hair Stylist</h1>
+    <p class="lead">Beleza com tecnologia — sua melhor versão começa aqui.</p>
+  </header>
+
+  <div class="container">
+    <!-- Toggle for luxury theme -->
+    <!-- circular bubbles like WhatsApp -->
+    <div class="bubbles" role="navigation" aria-label="Seções rápidas">
+      <a class="bubble" href="#cabelo"><span class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 11V5a4 4 0 00-8 0v6"/><path d="M12 15v6"/><path d="M9 21h6"/><path d="M8 11h8"/></svg></span><span>Cabelo</span></a>
+      <a class="bubble" href="#unhas"><span class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V2"/><path d="M5 15h14"/></svg></span><span>Unhas</span></a>
+      <a class="bubble" href="#estetica"><span class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v7a6 6 0 0012 0V2"/><circle cx="18" cy="20" r="2"/><path d="M18 18v-5"/></svg></span><span>Estética</span></a>
+      <a class="bubble" href="#solario"><span class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></span><span>Solário</span></a>
+      <a class="bubble" href="#produtos"><span class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="3" width="8" height="4"/><path d="M10 7v14h4V7"/></svg></span><span>Produtos</span></a>
+      <a class="bubble" href="#galeria"><span class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18"/><circle cx="8" cy="8" r="2"/><path d="M21 15l-5-5L5 21"/></svg></span><span>Galeria</span></a>
+    </div>
+
+    <div class="grid" id="mainGrid">
+      <main class="card" id="main-card">
+        <section id="cabelo">
+          <div class="section-title">Cabelo</div>
+          <div class="small">Coloração, cortes, tratamentos e finalização.</div>
+          <table>
+            <tr><th>Serviço</th><th>Preço</th></tr>
+            <tr><td>Coloração apenas raiz</td><td>45€</td></tr>
+            <tr><td>Coloração raiz + brushing (desde)</td><td>45€</td></tr>
+            <tr><td>Coloração cabelo médio (desde)</td><td>55€</td></tr>
+            <tr><td>Coloração cabelo comprido (desde)</td><td>65€</td></tr>
+            <tr><td>Brushing — curto / médio / comprido</td><td>15€ / 18€ / 25€</td></tr>
+            <tr><td>Progressiva | Botox | Madeixas (desde)</td><td>100€ / 80€ / 85€</td></tr>
+            <tr><td>Shades EQ (desde)</td><td>25€</td></tr>
+            <tr><td>Ondas (desde)</td><td>20€</td></tr>
+            <tr><td>Penteado (desde)</td><td>40€</td></tr>
+            <tr><td>Hidratação ABC Redken / Hidratação</td><td>35€ / 15€</td></tr>
+            <tr><td>Corte mulher</td><td>20€</td></tr>
+            <tr><td>Corte com finalização caracóis</td><td>30€</td></tr>
+            <tr><td>Corte com brushing (desde)</td><td>32€</td></tr>
+            <tr><td>Corte masculino | máquina</td><td>15€ | 10€</td></tr>
+          </table>
+        </section>
+
+        <section id="unhas" style="margin-top:16px">
+          <div class="section-title">Unhas</div>
+          <table>
+            <tr><th>Serviço</th><th>Preço</th></tr>
+            <tr><td>Manicure simples | c/ verniz normal | verniz gel</td><td>8€ | 12€ | 16€</td></tr>
+            <tr><td>Banho de gel</td><td>24€</td></tr>
+            <tr><td>Extensões T1–T6</td><td>34€ • 36€ • 38€</td></tr>
+            <tr><td>Manutenção de alongamentos</td><td>26€</td></tr>
+            <tr><td>Remoção: verniz gel | alongamento</td><td>5€ | 8€</td></tr>
+            <tr><td>Pedicure: sem verniz | verniz | verniz gel</td><td>15€ | 18€ | 24€</td></tr>
+            <tr><td>SPA de parafina quente</td><td>15€</td></tr>
+          </table>
+        </section>
+
+        <section id="estetica" style="margin-top:16px">
+          <div class="section-title">Estética</div>
+          <table>
+            <tr><th>Serviço</th><th>Preço</th></tr>
+            <tr><td>Sobrancelha</td><td>10€</td></tr>
+            <tr><td>Buço | Queixo</td><td>5€ | 5€</td></tr>
+            <tr><td>Axilas | Meia perna | Perna completa</td><td>sob consulta</td></tr>
+            <tr><td>Virilha | Virilha completa</td><td>sob consulta</td></tr>
+            <tr><td>Limpeza de pele</td><td>sob consulta</td></tr>
+          </table>
+        </section>
+
+        <section id="solario" style="margin-top:16px">
+          <div class="section-title">Solário & Tecnologia</div>
+          <table>
+            <tr><th>Serviço</th><th>Preço</th></tr>
+            <tr><td>Solário (por minuto)</td><td>1€ / minuto</td></tr>
+            <tr><td>Marquinha de fita</td><td>40€</td></tr>
+            <tr><td>DR. Muller — 12 minutos</td><td>-</td></tr>
+            <tr><td>Laser Diodo Pro | Tricologia | Hidratação de gelo</td><td>-</td></tr>
+          </table>
+        </section>
+
+        <section id="produtos"> <p class="small">Linhas profissionais de cuidado capilar e finalizadores disponíveis — consulte stock em loja.</p>
+<p class="small"><strong>Tricologia Capilar:</strong> trabalhamos com a gama <strong>Grandha</strong>.</p>
+        </section>
+
+        
+
+      </main>
+
+      <aside class="card right" aria-label="Informações de contacto">
+        <div class="contact-card">
+          <div class="contact-deco">🌿</div>
+          <h3>Ana Karla Hair Stylist</h3>
+          <div class="small" style="margin-top:6px">Beleza com tecnologia — sua melhor versão começa aqui.</div>
+          <div class="contact-line"><strong>Tel:</strong> <a href="tel:+351927515090">+351 927 515 090</a></div>
+          <div class="contact-line"><strong>Email:</strong> <a href="mailto:anakarla@example.com">anakarla@example.com</a></div>
+          <div class="contact-line"><strong>Local:</strong> Armação de Pêra, Algarve</div>
+          <div class="cta"><a class="btn" href="https://wa.me/351927515090" target="_blank">Contactar WhatsApp</a></div>
+          <div style="margin-top:10px" class="small"><strong>Atenção:</strong> Não aceitamos cartões — MB WAY ou numerário.</div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      © Ana Karla Hair Stylist — Beleza com tecnologia.
+    </footer>
+
+  </div>
+
+<section id="galeria">
+  <div class="card" style="padding:12px;margin-top:12px;">
+    <div style="margin-bottom:8px;font-weight:700;color:#2f7a2f">Galeria (Google Drive)</div>
+    <p style="margin:6px 0;color:#466b46">Clique numa categoria para carregar a subpasta correspondente.</p>
+    <div id="drive-controls" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">
+      <button class="drive-btn" data-topic="Cabelo" style="padding:8px 10px;border-radius:8px;border:1px solid rgba(47,122,47,0.12);background:#fff;cursor:pointer;margin-right:6px">Cabelo</button><button class="drive-btn" data-topic="Unhas" style="padding:8px 10px;border-radius:8px;border:1px solid rgba(47,122,47,0.12);background:#fff;cursor:pointer;margin-right:6px">Unhas</button><button class="drive-btn" data-topic="Estética" style="padding:8px 10px;border-radius:8px;border:1px solid rgba(47,122,47,0.12);background:#fff;cursor:pointer;margin-right:6px">Estética</button><button class="drive-btn" data-topic="Solário" style="padding:8px 10px;border-radius:8px;border:1px solid rgba(47,122,47,0.12);background:#fff;cursor:pointer;margin-right:6px">Solário</button><button class="drive-btn" data-topic="Produtos" style="padding:8px 10px;border-radius:8px;border:1px solid rgba(47,122,47,0.12);background:#fff;cursor:pointer;margin-right:6px">Produtos</button><button class="drive-btn" data-topic="Galeria" style="padding:8px 10px;border-radius:8px;border:1px solid rgba(47,122,47,0.12);background:#fff;cursor:pointer;margin-right:6px">Galeria</button>
+    </div>
+    <div style="margin-top:12px;position:relative;padding-top:56.25%;height:0;overflow:hidden;border-radius:12px;border:1px solid rgba(47,122,47,0.08)">
+      <iframe id="driveIframe" src="https://drive.google.com/embeddedfolderview?id=1H2XwsZAnK8ZvQq3HYX8XUX7VlTZzCSNH#grid" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allowfullscreen></iframe>
+    </div>
+    <p style="font-size:12px;color:#557d55;margin-top:8px">Se algum tablet não carregar o iframe ao abrir localmente (file://), publique o ficheiro via HTTPS (ex.: Netlify) ou abra pelo servidor local.</p>
+  </div>
+</section>
+
+<script>
+(function(){
+  const mapping = {"Cabelo": "https://drive.google.com/embeddedfolderview?id=1H2XwsZAnK8ZvQq3HYX8XUX7VlTZzCSNH#grid", "Unhas": "https://drive.google.com/embeddedfolderview?id=1-wq8EwB1lqD2FLOlsjGY-__wvfmhLZOw#grid", "Est\u00e9tica": "https://drive.google.com/embeddedfolderview?id=1MFzQcfhGn8Y5WpTlg5JI82t8RKJbJObQ#grid", "Sol\u00e1rio": "https://drive.google.com/embeddedfolderview?id=1banSmwQADEYuJHRmUU7EDRC6-gFA-2Lu#grid", "Produtos": "https://drive.google.com/embeddedfolderview?id=1jOftu1HOyOhv6haYYkthUiI6XiR05z_a#grid", "Galeria": "https://drive.google.com/embeddedfolderview?id=1OrQh2W3_jc_zfYKmJu2W7j4ljShfy4mS#grid"};
+  document.querySelectorAll('.drive-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=> {
+      const topic = btn.getAttribute('data-topic');
+      const src = mapping[topic];
+      document.getElementById('driveIframe').src = src;
+      document.querySelectorAll('.drive-btn').forEach(b=>b.style.background='#fff');
+      btn.style.background='#eef6ee';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
